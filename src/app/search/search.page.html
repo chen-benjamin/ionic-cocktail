@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchText" (ionChange)=search()></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let cocktail of cocktails;" (click)="onItemClick(cocktail)">
+      <ion-label>{{ cocktail.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

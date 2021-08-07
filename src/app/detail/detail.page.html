@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="favorites"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Favorite-detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label>{{ cocktail.name }}</ion-label>
+    </ion-item-divider>
+  
+    <ion-item>
+      <ion-col><ion-img [src]="cocktail.img"></ion-img></ion-col>
+    </ion-item>
+    <ion-item>
+      <ion-text>{{ cocktail.instructions }}</ion-text>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-grid>
+    <ion-row  *ngIf="!isExist">
+      <ion-col>
+        <ion-button expand="full" color="primary" (click)="addFavorite()">Add to Favorite</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row  *ngIf="isExist">
+      <ion-col>
+        <ion-button expand="full" color="success" (click)="editFavorite()">Edit Favorite</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row  *ngIf="isExist">
+      <ion-col>
+        <ion-button expand="full" color="danger" (click)="deleteFavorite()">Delete Favorite</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

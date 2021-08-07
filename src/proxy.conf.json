@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+    "target": "https://retro.umoiq.com/service/publicXMLFeed",
+    "changeOrigin": true,
+    "secure": false,
+    "pathRewrite": {"^/api" : ""}
+  }
+}

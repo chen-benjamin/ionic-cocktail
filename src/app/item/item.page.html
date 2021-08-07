@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="id">Create Your Cocktail</ion-title>
+    <ion-title *ngIf="!id">Edit Your Cocktail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #taskform="ngForm" (ngSubmit)="onSubmit(taskform)">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label position="floating"> Name </ion-label>
+          <ion-input
+          ngModel
+          required
+          name="name"
+          [(ngModel)]="name"
+          >
+          </ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-label position="floating"> Photo Link </ion-label>
+          <ion-input
+          ngModel
+          required
+          name="img"
+          [(ngModel)]="img"
+          >
+          </ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-label position="floating"> Instructions </ion-label>
+          <ion-textarea 
+          placeholder="Enter instructions..."
+          name="instructions"
+          [(ngModel)]="instructions"
+          >
+          </ion-textarea>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" submit expand="full" > Save </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

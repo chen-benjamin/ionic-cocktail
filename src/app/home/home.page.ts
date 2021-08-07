@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Cocktail } from '../model/cocktail.model';
+import { CocktailService } from '../service/cocktail.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  tests: Cocktail[];
+  constructor(private service: CocktailService) {}
 
 }
